@@ -32,7 +32,7 @@ html, body {
 		top:  calc(var(--j) / var(--rows)    * 100%);
 		width:  calc(100% / var(--columns));
 		height: calc(100% / var(--rows));
-		transition: 300ms;
+		transition: 800ms;
 	}
 	
 	.tile:last-child {
