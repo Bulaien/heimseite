@@ -1,49 +1,72 @@
-html, body {
-	display: grid;
-	place-content: center;
-	height: 100%;
-	margin: 0;
-	background: #bbd2f1;
-}
-.haupt {
-    z-index: 2;
-    text-align: center;
-    font-size: 30px;
-    color: whitesmoke;
-    text-shadow:4px 4px  hsla(210, 6%, 14%, 0.445);
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.sliding-puzzle {
-	width: 1200px;
-	height: 700px;
-	background: #bbd2f1;
-	border-radius: 0.5em;
-	overflow: hidden;
-	position: relative;
-	
-	.tile {
-		background: url("https://picsum.photos/1200/800")
-			#212325 no-repeat
-			calc(var(--x) / (var(--columns) - 1) * 100%)
-			calc(var(--y) / (var(--rows)    - 1) * 100%) /
-			calc(var(--columns) * 100%)
-			calc(var(--rows)    * 100%);
-		display: grid;
-		place-content: center;
-		font-size: 300%;
-		color: transparent;
-		/*  text-shadow: 0 1px black; */
-		user-select: none;
-		position: absolute;
-		left: calc(var(--i) / var(--columns) * 100%);
-		top:  calc(var(--j) / var(--rows)    * 100%);
-		width:  calc(100% / var(--columns));
-		height: calc(100% / var(--rows));
-		transition: 10000ms;
-	}
-	
-	.tile:last-child {
-		opacity: 0;
-		pointer-events: none;
-	}
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Full-height sections */
+    position: relative;
 }
+
+#section1 {
+    background-image: url('./pexels-christina-morillo-1181271.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section1 p{
+    padding: 30px 80px;
+    color: aliceblue;
+    font-family: monospace;
+    font-size: clamp(50px, 8vw, 150px);
+    font-weight: 900;
+    
+}
+
+#section2 {
+    background-image: url('./pexels-josh-sorenson-1714208.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section2 p{
+    padding: 30px 80px;
+    color: aliceblue;
+    font-family: monospace;
+    font-size: clamp(50px, 8vw, 150px);
+    font-weight: 900;
+}
+#section3 {
+    background-image: url('./pexels-markus-spiske-2004161.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section3 p{
+    padding: 30px 80px;
+    color: aliceblue;
+    font-family: monospace;
+    font-size: clamp(50px, 8vw, 150px);
+    font-weight: 900;
+    
+}
+
+@media (max-width: 768px) {
+
+    .parallax-section {
+
+        background-attachment: scroll;
+
+    }
+    #section3 p{
+        font-size: 20px;
+    }
+
+}
+
+/* Add more sections with different background images as needed */
