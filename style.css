@@ -4,35 +4,107 @@
     box-sizing: border-box;
 }
 
+body{
+    position: relative;
+}
+
+html{
+    scroll-snap-type: y proximity;
+}
+
+.button{
+    position: absolute;
+    position: fixed;
+    top: 20px;
+    right: 5%;
+    z-index: 3;
+    box-shadow: 4px 4px 8px  rgba(0, 0, 0, .3);
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: rgba(240, 248, 255, 0.555);
+}
+
+.menu{
+    
+    width: 20%;
+    border-radius: 10px;
+    position: absolute;
+    position: fixed;
+    top: 84px;
+    right: 5%;
+    z-index: 3;
+    background-color: rgba(240, 248, 255, 0.555);
+    display: none;
+    box-shadow: 4px 4px 8px  rgba(0, 0, 0, .3);
+}
+.menu.active{
+    display: flex;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+.menu ul li{
+    padding: 10px;
+    font-size: 1.5rem;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: black;
+    font-family: monospace;
+}
+
 .parallax-section {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh; /* Full-height sections */
-    position: relative;
+    height: 100vh; 
+    
+}
+
+.logo{
+    font-size: clamp(50px, 8vw, 150px);
+    font-family: monospace;
 }
 
 #section1 {
     background-image: url('./pexels-christina-morillo-1181271.jpg');
+    background-attachment: fixed;
+    
     display: flex;
     justify-content: center;
+    height: 100vh;
     align-items: center;
+    scroll-snap-align:  start;
 }
 #section1 p{
-    padding: 30px 80px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
     color: aliceblue;
     font-family: monospace;
-    font-size: clamp(50px, 8vw, 150px);
+    font-size: clamp(40px, 8vw, 150px);
     font-weight: 900;
     
 }
 
+.info{
+   width: 95%;
+    background-color: rgba(240, 248, 255, 0.555);
+    border-radius: 10px;
+}
+
 #section2 {
     background-image: url('./pexels-josh-sorenson-1714208.jpg');
+    background-attachment: fixed;
     display: flex;
+    height: 100vh;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start;
 }
 #section2 p{
     padding: 30px 80px;
@@ -43,9 +115,13 @@
 }
 #section3 {
     background-image: url('./pexels-markus-spiske-2004161.jpg');
+    
     display: flex;
     justify-content: center;
+    height: 100vh;
     align-items: center;
+    scroll-snap-align: start;
+    
 }
 #section3 p{
     padding: 30px 80px;
@@ -56,6 +132,36 @@
     
 }
 
+header{
+    display: flex;
+    width: 100vw;
+   
+    background-color: aliceblue;
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+    z-index: 10;
+
+}
+
+.right{
+    flex: 50%;
+    border-color: aqua;
+}
+.left{
+    flex: 50%;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+.left h1{
+    font-size: 2vw;
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
 
     .parallax-section {
@@ -64,7 +170,10 @@
 
     }
     #section3 p{
-        font-size: 20px;
+        font-size: 40px;
+    }
+    .menu{
+        width: 50%;
     }
 
 }
