@@ -43,27 +43,28 @@ html{
 
 .menu ul{
     display: flex;
+    width: 100%;
     flex-direction: column;
     list-style: none;
 }
 .menu ul li{
+    width: 100%;
     padding: 10px;
     font-size: 1.5rem;
 }
 .menu ul li a{
+    width: 100%;
+    display: block;
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: monospace;
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
-.parallax-section {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh; 
-    
-}
+
 
 .logo{
     font-size: clamp(50px, 8vw, 150px);
@@ -73,6 +74,9 @@ html{
 #section1 {
     background-image: url('./pexels-christina-morillo-1181271.jpg');
     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     
     display: flex;
     justify-content: center;
@@ -80,42 +84,56 @@ html{
     align-items: center;
     scroll-snap-align:  start;
 }
-#section1 p{
+#section2 p{
     padding: 10px 30px;
     display: flex;
-    flex-direction: column;
-    color: aliceblue;
-    font-family: monospace;
-    font-size: clamp(40px, 8vw, 150px);
-    font-weight: 900;
     
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-size: clamp(10px, 4vw, 100px);
+    font-weight: 900;
+    text-shadow: 2px 2px 4px black;
+}
+
+#section2 span{
+    color:rebeccapurple
 }
 
 .info{
-   width: 95%;
-    background-color: rgba(240, 248, 255, 0.555);
+   
+    background-color: rgba(240, 248, 255, 1);
+   
+    padding: 2%;
     border-radius: 10px;
 }
+
+
 
 #section2 {
     background-image: url('./pexels-josh-sorenson-1714208.jpg');
     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
 }
-#section2 p{
+/* #section2 p{
     padding: 30px 80px;
     color: aliceblue;
     font-family: monospace;
     font-size: clamp(50px, 8vw, 150px);
     font-weight: 900;
-}
+} */
 #section3 {
     background-image: url('./pexels-markus-spiske-2004161.jpg');
-    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -132,6 +150,18 @@ html{
     
 }
 
+#section4 {
+    background-image: url('./pexels-brett-sayles-5203849.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
 header{
     display: flex;
     width: 100vw;
@@ -162,13 +192,31 @@ header{
     padding: 10px;
 }
 
+.overlay{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    
+    bottom: 0;
+    z-index: 1;
+    background-color: rgb(0,0,0);
+    transition: 3.5s ease-in-out;
+
+}
+
+@media (orientation: landscape) and (max-width: 1200px) {
+   #section2 p{
+    font-size: 1.5rem;
+   }
+    .info{
+        margin: 30px;
+    }
+    .fontsize p{font-size: 10px;}
+}
+
 @media (max-width: 768px) {
 
-    .parallax-section {
-
-        background-attachment: scroll;
-
-    }
+   
     #section3 p{
         font-size: 40px;
     }
@@ -177,4 +225,6 @@ header{
     }
 
 }
+
+
 
